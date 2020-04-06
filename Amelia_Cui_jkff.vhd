@@ -14,9 +14,9 @@ PROCESS(clk, J, K)
 BEGIN 
   IF J = '1' && K = '0' THEN 
     sig <= '1';
-  ELSEIF J ='0' && K = '1' THEN 
+  ELSIF J ='0' && K = '1' THEN 
     sig <= '0';
-  ELSEIF RISING_EDGE(clk)THEN 
+  ELSIF RISING_EDGE(clk)THEN 
     IF J<=0 THEN 
       sig<= D;
     ELSE
