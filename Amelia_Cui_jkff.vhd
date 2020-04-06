@@ -17,12 +17,12 @@ BEGIN
   ELSIF (J ='0' && K = '1') THEN 
     sig <= '0';
   ELSIF (RISING_EDGE(clk))THEN 
-    IF (J= '0') THEN 
+    if (J= '0') then 
       sig<= sig;
-    ELSE
+    elsif (J='1')then
       sig<= not(sig);
-    ENDIF;
- ENDIF;
+      end if;
+ end if;
  END PROCESS;
 Q<= sig;
 END behavioral; 
