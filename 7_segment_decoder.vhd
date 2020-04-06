@@ -1,10 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-entity 7_segment_decoder is
+entity A7_segment_decoder is
 port ( code : in std_logic_vector(3 downto 0);
-segments_out : out std_logic_vector (6 downto 0)); end 7_segment_decoder;
-architecture decoder of 7_segment_decoder is
+segments_out : out std_logic_vector (6 downto 0)); end A7_segment_decoder;
+architecture decoder of A7_segment_decoder is
 begin
 WITH code SELECT
 segments_out <=
