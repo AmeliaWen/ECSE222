@@ -12,12 +12,12 @@ ARCHITECTURE behavioral OF Amelia_Cui_jkff is
  BEGIN
 PROCESS(clk, J, K)
 BEGIN 
-  IF J = '1' && K = '0' THEN 
+  IF (J = '1' && K = '0') THEN 
     sig <= '1';
-  ELSIF J ='0' && K = '1' THEN 
+  ELSIF (J ='0' && K = '1') THEN 
     sig <= '0';
-  ELSIF RISING_EDGE(clk)THEN 
-    IF J= '0' THEN 
+  ELSIF (RISING_EDGE(clk))THEN 
+    IF (J= '0') THEN 
       sig<= D;
     ELSE
       sig<= not(D);
