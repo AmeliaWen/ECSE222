@@ -18,9 +18,9 @@ BEGIN
     sig <= '0';
   ELSIF (RISING_EDGE(clk))THEN 
     IF (J= '0') THEN 
-      sig<= D;
+      sig<= sig;
     ELSE
-      sig<= not(D);
+      sig<= not(sig);
     ENDIF;
  ENDIF;
  END PROCESS;
