@@ -17,7 +17,7 @@ BEGIN
   ELSIF J ='0' && K = '1' THEN 
     sig <= '0';
   ELSIF RISING_EDGE(clk)THEN 
-    IF J<=0 THEN 
+    IF J= '0' THEN 
       sig<= D;
     ELSE
       sig<= not(D);
