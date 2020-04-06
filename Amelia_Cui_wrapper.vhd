@@ -32,4 +32,4 @@ u1: Amelia_Cui_clock_divider PORT MAP (enable, reset, clk, ena);
 u2: Amelia_Cui_counter PORT MAP (ena, reset, clk, counterout);
 codein <= '0'&counterout;
 u3: A7_segment_decoder PORT MAP (codein, HEXO);
-end behavioral; 
+end behavorial; 
