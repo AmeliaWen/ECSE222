@@ -8,18 +8,21 @@ entity Amelia_Cui_jkff is
         Q  : out std_logic);
 end Amelia_Cui_jkff; 
 ARCHITECTURE behavioral OF Amelia_Cui_jkff is 
+  signal sig : std_logic;
+ BEGIN
 PROCESS(clk, J, K)
 BEGIN 
-  IF J<= '1' && K<= '0' THEN 
-    Q <= '1';
-  ELSEIF J<='0' && K<= '1' THEN 
-    Q <= '0';
+  IF J = '1' && K = '0' THEN 
+    sig <= '1';
+  ELSEIF J ='0' && K = '1' THEN 
+    sig <= '0';
   ELSEIF RISING_EDGE(clk)THEN 
     IF J<=0 THEN 
-      Q<= D;
+      sig<= D;
     ELSE
-      Q<= not(D);
+      sig<= not(D);
     ENDIF;
  ENDIF;
  END PROCESS;
+Q<= sig;
 END behavioral; 
