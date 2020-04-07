@@ -8,13 +8,13 @@ Port (enable : in std_logic;
       en_out : out std_logic);
 end Amelia_Cui_clock_divider; 
 ARCHITECTURE behavioral OF Amelia_Cui_clock_divider is 
-signal count:integer := 50000000;
+signal count:integer := 10;
 signal itercount : std_logic;
 BEGIN 
 PROCESS(reset, clk, enable) 
 BEGIN 
 if (reset = '1')then 
-count <= 50000000;
+count <= 10;
 itercount <= '0';
 elsif (RISING_EDGE(clk))then 
 if enable = '1' then 
@@ -25,7 +25,7 @@ if enable = '1' then
 end if;
 if (count = 0) then 
 itercount<= '1';
-count <= 50000000;
+count <= 10;
 end if;
 end PROCESS;
 en_out <= itercount;
